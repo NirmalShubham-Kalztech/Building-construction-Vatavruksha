@@ -7,10 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependency and build files
 node_modules
 dist
 dist-ssr
 *.local
+
+# Ignore backend folder
+../my-node-backend
 
 # Editor directories and files
 .vscode/*
