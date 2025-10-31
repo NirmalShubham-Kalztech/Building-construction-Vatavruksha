@@ -3,7 +3,6 @@ import BlogImage from "../assets/img/Blog1.png";
 import BlogImage2 from "../assets/img/Blog2.png";
 import BlogImage3 from "../assets/img/Blog3.png";
 
-
 export default function BlogUpdates() {
   const articles = [
     {
@@ -14,7 +13,7 @@ export default function BlogUpdates() {
       category: "Technology",
       description:
         "Discover the advantages of trimix flooring technology and why it's becoming the preferred choice for industrial applications.",
-      image: {BlogImage2}, // Replace with your actual image path
+      image: BlogImage2,
     },
     {
       id: 2,
@@ -24,7 +23,7 @@ export default function BlogUpdates() {
       category: "Sustainability",
       description:
         "Learn about eco-friendly construction methods and how we're implementing sustainable practices in our projects.",
-      image: "../assets/img/Blog3.png",
+      image: BlogImage3,
     },
     {
       id: 3,
@@ -34,85 +33,81 @@ export default function BlogUpdates() {
       category: "Project Updates",
       description:
         "Latest updates on our flagship project including construction milestones and upcoming phases.",
-      image: "/images/metro-complex.jpg",
+      image: BlogImage,
     },
   ];
+
   return (
-
-    <> 
-    <section className="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-20 px-6">
-      <div className="max-w-5xl mx-auto text-center">
-        {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Blog & Updates
-        </h2>
-
-        {/* Sub Text */}
-        <p className="text-lg md:text-xl text-white/90">
-          Stay updated with the latest insights, project updates, and industry
-          trends in construction and infrastructure development.
-        </p>
-      </div>
-    </section>
-
-
-    <section className="bg-blue-50 py-16 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-md p-6 md:p-10">
-        {/* Left Side Content */}
-        <div>
-          <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
-            FEATURED ARTICLE
-          </span>
-
-          <h2 className="text-3xl font-bold mt-4 text-gray-900">
-            Why Trimix Flooring is Best for Industries
+    <>
+      {/* --- Blog Header Section --- */}
+      <section className="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-16 md:py-20 px-4 md:px-6 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+            Blog & Updates
           </h2>
-
-          <p className="text-gray-600 mt-4">
-            Explore the revolutionary trimix flooring technology that's
-            transforming industrial construction. Learn about its superior
-            strength, durability, and cost-effectiveness compared to traditional
-            flooring methods.
+          <p className="text-base md:text-xl text-white/90 leading-relaxed">
+            Stay updated with the latest insights, project updates, and industry
+            trends in construction and infrastructure development.
           </p>
+        </div>
+      </section>
 
-          {/* Meta Info */}
-          <div className="flex items-center gap-6 mt-6 text-sm text-gray-500">
-            <span>March 15, 2024</span>
-            <span>5 min read</span>
-            <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
-              Technology
+      {/* --- Featured Article Section --- */}
+      <section className="bg-blue-50 py-12 md:py-16 px-4 md:px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-md p-6 md:p-10">
+          {/* Left Content */}
+          <div>
+            <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+              FEATURED ARTICLE
             </span>
+
+            <h2 className="text-2xl md:text-3xl font-bold mt-4 text-gray-900">
+              Why Trimix Flooring is Best for Industries
+            </h2>
+
+            <p className="text-gray-600 mt-4 text-base md:text-lg leading-relaxed">
+              Explore the revolutionary trimix flooring technology that's
+              transforming industrial construction. Learn about its superior
+              strength, durability, and cost-effectiveness compared to
+              traditional flooring methods.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-6 text-sm text-gray-500">
+              <span>March 15, 2024</span>
+              <span>• 5 min read</span>
+              <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">
+                Technology
+              </span>
+            </div>
+
+            <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition w-full sm:w-auto">
+              Read Full Article
+            </button>
           </div>
 
-          {/* Button */}
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">
-            Read Full Article
-          </button>
+          {/* Right Image */}
+          <div className="order-first md:order-last">
+            <img
+              src={BlogImage}
+              alt="Trimix Flooring"
+              className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl shadow"
+            />
+          </div>
         </div>
+      </section>
 
-        {/* Right Side Image */}
-        <div>
-          <img
-            src={BlogImage} // 👈 तुझ्या ब्लॉगची image path इथे द्या
-            alt="Trimix Flooring"
-            className="w-full h-72 object-cover rounded-xl shadow"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-gray-50 py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
+      {/* --- Latest Articles Section --- */}
+      <section className="bg-gray-50 py-16 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Latest Articles
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 text-base md:text-lg">
             Industry insights and project updates
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
           {articles.map((article) => (
             <div
               key={article.id}
@@ -120,28 +115,30 @@ export default function BlogUpdates() {
             >
               <div className="relative">
                 <img
-                  src={BlogImage}
+                  src={article.image}
                   alt={article.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 sm:h-56 object-cover"
                 />
                 <span className="absolute top-3 left-3 bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-700 shadow-sm">
                   {article.category}
                 </span>
               </div>
 
-              <div className="p-5">
+              <div className="p-5 text-left">
                 <p className="text-sm text-gray-500 mb-2">
-                  {article.date} &nbsp;&nbsp;•&nbsp;&nbsp; {article.readTime}
+                  {article.date} &nbsp;•&nbsp; {article.readTime}
                 </p>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                   {article.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{article.description}</p>
+                <p className="text-gray-600 mb-4 text-sm md:text-base">
+                  {article.description}
+                </p>
                 <a
                   href="#"
                   className="text-blue-600 font-semibold hover:underline inline-flex items-center"
                 >
-                  Read More{" "}
+                  Read More
                   <svg
                     className="w-4 h-4 ml-1"
                     fill="none"
@@ -160,43 +157,33 @@ export default function BlogUpdates() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
+      {/* --- Newsletter Section --- */}
+      <section className="bg-[#007bc3] py-14 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Stay Updated
+          </h2>
+          <p className="text-white text-base md:text-lg mb-8">
+            Subscribe to our newsletter for the latest construction insights and project updates
+          </p>
 
-    <section className="bg-[#007bc3] py-16">
-      <div className="max-w-4xl mx-auto text-center px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Stay Updated
-        </h2>
-        <p className="text-white text-lg mb-8">
-          Subscribe to our newsletter for the latest construction insights and project updates
-        </p>
-
-        <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-4 py-3 rounded-md w-full sm:w-80 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-200"
-          />
-          <button
-            type="submit"
-            className="bg-white text-[#007bc3] font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
-    </section>
-  
-
-
-
-
-
+          <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-3 rounded-md w-full sm:w-80 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-200"
+            />
+            <button
+              type="submit"
+              className="bg-white text-[#007bc3] font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition w-full sm:w-auto"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </>
-
-
-
   );
 }
