@@ -8,6 +8,7 @@ import {
   FaClock,
   FaBriefcase,
 } from "react-icons/fa";
+import { motion } from "framer-motion"; // ✅ Animation library
 
 export default function JoinOurTeam() {
   const features = [
@@ -35,8 +36,7 @@ export default function JoinOurTeam() {
     {
       icon: <FaHeart className="text-orange-500 text-3xl" />,
       title: "Work-Life Balance",
-      description:
-        "Flexible policies and comprehensive benefits package.",
+      description: "Flexible policies and comprehensive benefits package.",
       bg: "bg-orange-100",
     },
   ];
@@ -107,26 +107,59 @@ export default function JoinOurTeam() {
   return (
     <>
       {/* --- Hero Section --- */}
-      <section className="bg-gradient-to-r from-[#008fd3] to-[#1f63e0] text-white py-16 md:py-20 text-center px-4">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">Join Our Team</h2>
-        <p className="text-base md:text-xl max-w-4xl mx-auto leading-relaxed">
+      <motion.section
+        className="bg-gradient-to-r from-[#008fd3] to-[#1f63e0] text-white py-16 md:py-20 text-center px-4"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.h2
+          className="text-3xl md:text-5xl font-bold mb-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          Join Our Team
+        </motion.h2>
+        <motion.p
+          className="text-base md:text-xl max-w-4xl mx-auto leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
           Build your career with Vatavruksha Infra Project and be part of
           creating extraordinary infrastructure that shapes the future.
-        </p>
-      </section>
+        </motion.p>
+      </motion.section>
 
       {/* --- Why Choose Us Section --- */}
       <section className="py-16 px-4 bg-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-gray-900"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Why Choose Vatavruksha?
-        </h2>
-        <p className="text-lg text-gray-600 mt-3 mb-10">
+        </motion.h2>
+        <motion.p
+          className="text-lg text-gray-600 mt-3 mb-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           Discover the benefits of joining our growing team
-        </p>
+        </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
           {features.map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <motion.div
+              key={index}
+              className="flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * 0.2 }}
+            >
               <div className={`p-5 rounded-full ${item.bg} mb-4`}>
                 {item.icon}
               </div>
@@ -136,7 +169,7 @@ export default function JoinOurTeam() {
               <p className="text-gray-600 mt-2 max-w-xs text-sm">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -144,19 +177,32 @@ export default function JoinOurTeam() {
       {/* --- Job Openings Section --- */}
       <section className="bg-[#f8f9fb] py-16 px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-gray-900"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
             Current Job Openings
-          </h2>
-          <p className="text-lg text-gray-600 mt-2">
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600 mt-2"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
             Find your perfect role and start building your future with us
-          </p>
+          </motion.p>
         </div>
 
         <div className="space-y-10 max-w-6xl mx-auto">
           {jobs.map((job, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-md p-6 md:p-10"
+              className="bg-white rounded-2xl shadow-md p-6 md:p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: index * 0.3 }}
             >
               <div className="flex flex-col md:flex-row justify-between gap-6">
                 {/* Left Info */}
@@ -197,15 +243,15 @@ export default function JoinOurTeam() {
 
                 {/* Right Buttons */}
                 <div className="flex flex-col justify-center items-center gap-3">
-                  <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition w-full sm:w-auto">
+                  <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
                     Apply Now
                   </button>
-                  <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-50 transition w-full sm:w-auto">
+                  <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
                     View Details
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

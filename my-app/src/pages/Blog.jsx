@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // ✅ Add this import
 import BlogImage from "../assets/img/Blog1.png";
 import BlogImage2 from "../assets/img/Blog2.png";
 import BlogImage3 from "../assets/img/Blog3.png";
@@ -40,23 +41,52 @@ export default function BlogUpdates() {
   return (
     <>
       {/* --- Blog Header Section --- */}
-      <section className="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-16 md:py-20 px-4 md:px-6 text-center">
+      <motion.section
+        className="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-16 md:py-20 px-4 md:px-6 text-center"
+        initial={{ opacity: 0, y: -60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4">
+          <motion.h2
+            className="text-3xl md:text-5xl font-extrabold mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
             Blog & Updates
-          </h2>
-          <p className="text-base md:text-xl text-white/90 leading-relaxed">
+          </motion.h2>
+          <motion.p
+            className="text-base md:text-xl text-white/90 leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
             Stay updated with the latest insights, project updates, and industry
             trends in construction and infrastructure development.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
 
       {/* --- Featured Article Section --- */}
-      <section className="bg-blue-50 py-12 md:py-16 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-md p-6 md:p-10">
+      <motion.section
+        className="bg-blue-50 py-12 md:py-16 px-4 md:px-6"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-2xl shadow-md p-6 md:p-10 hover:shadow-xl transition-all duration-500"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           {/* Left Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
               FEATURED ARTICLE
             </span>
@@ -83,43 +113,75 @@ export default function BlogUpdates() {
             <button className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition w-full sm:w-auto">
               Read Full Article
             </button>
-          </div>
+          </motion.div>
 
           {/* Right Image */}
-          <div className="order-first md:order-last">
+          <motion.div
+            className="order-first md:order-last overflow-hidden rounded-xl"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
             <img
               src={BlogImage}
               alt="Trimix Flooring"
-              className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl shadow"
+              loading="lazy"
+              className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl transform transition-transform duration-500 ease-in-out hover:scale-105"
             />
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* --- Latest Articles Section --- */}
-      <section className="bg-gray-50 py-16 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto text-center mb-10 md:mb-12">
+      <motion.section
+        className="bg-gray-50 py-16 px-4 md:px-6"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-7xl mx-auto text-center mb-10 md:mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Latest Articles
           </h2>
           <p className="text-gray-600 mt-2 text-base md:text-lg">
             Industry insights and project updates
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <motion.div
+          className="grid gap-8 sm:grid-cols-2 md:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.3 },
+            },
+          }}
+        >
           {articles.map((article) => (
-            <div
+            <motion.div
               key={article.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transform hover:-translate-y-1 transition-all duration-500"
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
             >
-              <div className="relative">
+              <div className="relative overflow-hidden group">
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-48 sm:h-56 object-cover"
+                  loading="lazy"
+                  className="w-full h-48 sm:h-56 object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105"
                 />
-                <span className="absolute top-3 left-3 bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+                <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700 shadow-sm">
                   {article.category}
                 </span>
               </div>
@@ -154,14 +216,24 @@ export default function BlogUpdates() {
                   </svg>
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* --- Newsletter Section --- */}
-      <section className="bg-[#007bc3] py-14 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+      <motion.section
+        className="bg-[#007bc3] py-14 px-4 text-center"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Stay Updated
           </h2>
@@ -182,8 +254,8 @@ export default function BlogUpdates() {
               Subscribe
             </button>
           </form>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </>
   );
 }
