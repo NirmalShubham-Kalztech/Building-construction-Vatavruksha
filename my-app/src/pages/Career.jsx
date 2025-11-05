@@ -1,260 +1,235 @@
 import React from "react";
-import {
-  FaTrophy,
-  FaGraduationCap,
-  FaUsers,
-  FaHeart,
-  FaMapMarkerAlt,
-  FaClock,
-  FaBriefcase,
-} from "react-icons/fa";
-import { motion } from "framer-motion"; // ✅ Animation library
+import { motion } from "framer-motion";
 
-export default function JoinOurTeam() {
-  const features = [
-    {
-      icon: <FaTrophy className="text-blue-500 text-3xl" />,
-      title: "Excellence Culture",
-      description:
-        "Work with industry leaders and contribute to award-winning projects.",
-      bg: "bg-blue-100",
-    },
-    {
-      icon: <FaGraduationCap className="text-green-500 text-3xl" />,
-      title: "Learning & Growth",
-      description:
-        "Continuous training programs and career advancement opportunities.",
-      bg: "bg-green-100",
-    },
-    {
-      icon: <FaUsers className="text-purple-500 text-3xl" />,
-      title: "Collaborative Team",
-      description:
-        "Work with passionate professionals in a supportive environment.",
-      bg: "bg-purple-100",
-    },
-    {
-      icon: <FaHeart className="text-orange-500 text-3xl" />,
-      title: "Work-Life Balance",
-      description: "Flexible policies and comprehensive benefits package.",
-      bg: "bg-orange-100",
-    },
-  ];
+// --- Import images properly ---
+import Career1 from "../assets/img/Career1.jpg";
+import Career2 from "../assets/img/Career2.jpg";
+import Career3 from "../assets/img/Career3.jpg";
+import Career4 from "../assets/img/Career4.jpg";
+import Career5 from "../assets/img/Career5.jpg";
+import Career6 from "../assets/img/Career6.jpg";
 
-  const jobs = [
-    {
-      title: "Senior Civil Engineer",
-      category: "Engineering",
-      location: "Mumbai, Maharashtra",
-      type: "Full-time",
-      experience: "5-8 years",
-      description:
-        "Lead construction projects and supervise trimix flooring installations with expertise in structural engineering.",
-      requirements: [
-        "Bachelor's degree in Civil Engineering",
-        "5+ years experience in construction",
-        "Knowledge of trimix flooring technology",
-        "Project management certification preferred",
-      ],
-    },
-    {
-      title: "Project Manager",
-      category: "Operations",
-      location: "Pune, Maharashtra",
-      type: "Full-time",
-      experience: "4-6 years",
-      description:
-        "Manage multiple construction projects from planning to completion ensuring quality and timeline adherence.",
-      requirements: [
-        "Engineering degree preferred",
-        "4+ years project management experience",
-        "Strong leadership and communication skills",
-        "PMP certification is a plus",
-      ],
-    },
-    {
-      title: "Quality Control Engineer",
-      category: "Quality Assurance",
-      location: "Bangalore, Karnataka",
-      type: "Full-time",
-      experience: "2-4 years",
-      description:
-        "Ensure construction quality standards and conduct regular inspections of concrete works and flooring.",
-      requirements: [
-        "Bachelor's in Civil Engineering",
-        "2+ years in quality control",
-        "Knowledge of construction materials testing",
-        "Attention to detail and analytical skills",
-      ],
-    },
-    {
-      title: "Construction Supervisor",
-      category: "Operations",
-      location: "Chennai, Tamil Nadu",
-      type: "Full-time",
-      experience: "3-5 years",
-      description:
-        "Supervise on-site construction activities and ensure safety protocols are followed at all times.",
-      requirements: [
-        "Diploma in Civil Engineering",
-        "3+ years site supervision experience",
-        "Strong knowledge of safety regulations",
-        "Excellent problem-solving skills",
-      ],
-    },
-  ];
-
+const JoinOurTeam = () => {
   return (
-    <>
+    <div className="bg-gray-50 text-gray-900">
       {/* --- Hero Section --- */}
-      <motion.section
-        className="bg-gradient-to-r from-[#008fd3] to-[#1f63e0] text-white py-16 md:py-20 text-center px-4"
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.h2
-          className="text-3xl md:text-5xl font-bold mb-6"
-          initial={{ opacity: 0, y: 30 }}
+      <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white py-20 px-4 text-center">
+        <motion.h1
+          className="text-4xl md:text-5xl font-extrabold mb-6"
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 1 }}
         >
-          Join Our Team
-        </motion.h2>
+          Build Your Career with Vatavruksha Construction
+        </motion.h1>
         <motion.p
-          className="text-base md:text-xl max-w-4xl mx-auto leading-relaxed"
+          className="max-w-3xl mx-auto text-lg text-white/90"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ delay: 0.3, duration: 1 }}
         >
-          Build your career with Vatavruksha Infra Project and be part of
-          creating extraordinary infrastructure that shapes the future.
+          Join our team of professionals who shape skylines, design excellence,
+          and build the future — one project at a time.
         </motion.p>
-      </motion.section>
+      </section>
 
-      {/* --- Why Choose Us Section --- */}
-      <section className="py-16 px-4 bg-white text-center">
+      {/* --- Why Join Vatavruksha --- */}
+      <section className="py-16 px-4 bg-white">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-gray-900"
+          className="text-3xl md:text-4xl font-bold text-center mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Why Choose Vatavruksha?
+          Why Join Vatavruksha?
         </motion.h2>
-        <motion.p
-          className="text-lg text-gray-600 mt-3 mb-10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          Discover the benefits of joining our growing team
-        </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-          {features.map((item, index) => (
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Innovative Projects",
+              desc: "Work on challenging residential, commercial, and civil projects that redefine standards.",
+            },
+            {
+              title: "Learning & Growth",
+              desc: "Gain hands-on experience, mentorship, and opportunities to enhance your skills.",
+            },
+            {
+              title: "Team Culture",
+              desc: "Be a part of a friendly, professional, and passionate team that supports each other.",
+            },
+          ].map((item, i) => (
             <motion.div
-              key={index}
-              className="flex flex-col items-center bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: index * 0.2 }}
+              key={i}
+              className="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-500"
+              whileHover={{ scale: 1.03 }}
             >
-              <div className={`p-5 rounded-full ${item.bg} mb-4`}>
-                {item.icon}
-              </div>
-              <h3 className="font-semibold text-lg text-gray-900">
+              <h3 className="text-xl font-semibold mb-3 text-blue-600">
                 {item.title}
               </h3>
-              <p className="text-gray-600 mt-2 max-w-xs text-sm">
-                {item.description}
+              <p className="text-gray-700">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- Life at Vatavruksha --- */}
+      <section className="py-16 bg-white">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Life at Vatavruksha
+        </motion.h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+          {[
+            { img: Career1, caption: "Collaborative Teamwork" },
+            { img: Career2, caption: "On-Site Excellence" },
+            { img: Career3, caption: "Learning & Growth" },
+            { img: Career4, caption: "Team Celebrations" },
+            { img: Career5, caption: "Innovation at Work" },
+            { img: Career6, caption: "Commitment to Quality" },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              className="relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              whileHover={{ scale: 1.03 }}
+            >
+              <img
+                src={item.img}
+                alt={item.caption}
+                className="w-full h-56 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-center py-2 text-sm">
+                {item.caption}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- Employee Testimonials --- */}
+      <section className="bg-[#f3f6fb] py-16 px-4">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          What Our Team Says
+        </motion.h2>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              name: "Rohit Patil",
+              role: "Site Engineer",
+              text: "Working at Vatavruksha has been a great learning experience. The leadership is supportive and the projects are exciting!",
+              img: Career1,
+            },
+            {
+              name: "Akshay Jadhav",
+              role: "Project Manager",
+              text: "The culture here promotes innovation and teamwork. Every day feels like we’re building something meaningful.",
+              img: Career2,
+            },
+            {
+              name: "Priya Kulkarni",
+              role: "Architect",
+              text: "Vatavruksha gives complete creative freedom. Designing modern structures that become landmarks is truly rewarding.",
+              img: Career3,
+            },
+            {
+              name: "Sandeep More",
+              role: "Civil Supervisor",
+              text: "From planning to execution, every stage here teaches you something new. The team coordination is amazing!",
+              img: Career4,
+            },
+            {
+              name: "Sneha Deshmukh",
+              role: "Electrical Engineer",
+              text: "I love the balance of professionalism and friendly culture here. Every project challenges my technical skills positively.",
+              img: Career5,
+            },
+            {
+              name: "Vikas Pawar",
+              role: "Interior Designer",
+              text: "Here, aesthetics meet engineering perfection. I’ve grown a lot as a designer since joining Vatavruksha.",
+              img: Career6,
+            },
+          ].map((emp, i) => (
+            <motion.div
+              key={i}
+              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: i * 0.2 }}
+            >
+              <div className="flex items-center mb-4">
+                <img
+                  src={emp.img}
+                  alt={emp.name}
+                  className="w-14 h-14 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-bold text-lg text-gray-900">
+                    {emp.name}
+                  </h4>
+                  <p className="text-sm text-gray-500">{emp.role}</p>
+                </div>
+              </div>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                {emp.text}
               </p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* --- Job Openings Section --- */}
-      <section className="bg-[#f8f9fb] py-16 px-4">
-        <div className="text-center mb-10">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold text-gray-900"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+      {/* --- Apply Now Section --- */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-sky-500 text-white text-center px-4">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold mb-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Ready to Build Your Future?
+        </motion.h2>
+        <p className="text-lg text-white/90 mb-8">
+          Submit your application and become part of the Vatavruksha family.
+        </p>
+        <form className="max-w-2xl mx-auto bg-white text-gray-900 p-6 rounded-xl shadow-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="p-3 border rounded-md w-full focus:outline-blue-500"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="p-3 border rounded-md w-full focus:outline-blue-500"
+            />
+          </div>
+          <textarea
+            placeholder="Why do you want to join us?"
+            className="w-full p-3 border rounded-md mb-4 focus:outline-blue-500"
+            rows="4"
+          ></textarea>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300"
           >
-            Current Job Openings
-          </motion.h2>
-          <motion.p
-            className="text-lg text-gray-600 mt-2"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            Find your perfect role and start building your future with us
-          </motion.p>
-        </div>
-
-        <div className="space-y-10 max-w-6xl mx-auto">
-          {jobs.map((job, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-2xl shadow-md p-6 md:p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: index * 0.3 }}
-            >
-              <div className="flex flex-col md:flex-row justify-between gap-6">
-                {/* Left Info */}
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-                    {job.title}
-                  </h3>
-                  <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                    {job.category}
-                  </span>
-
-                  <div className="flex flex-wrap gap-4 text-gray-600 text-sm mb-4">
-                    <span className="flex items-center gap-2">
-                      <FaMapMarkerAlt className="text-blue-600" />
-                      {job.location}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <FaClock className="text-blue-600" />
-                      {job.type}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <FaBriefcase className="text-blue-600" />
-                      {job.experience}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-700 mb-3">{job.description}</p>
-
-                  <div className="mt-3">
-                    <strong className="text-gray-900">Requirements:</strong>
-                    <ul className="list-disc list-inside text-gray-600 mt-2 text-sm md:text-base">
-                      {job.requirements.map((req, i) => (
-                        <li key={i}>{req}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Right Buttons */}
-                <div className="flex flex-col justify-center items-center gap-3">
-                  <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
-                    Apply Now
-                  </button>
-                  <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
-                    View Details
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            Submit Application
+          </button>
+        </form>
       </section>
-    </>
+    </div>
   );
-}
+};
+
+export default JoinOurTeam;

@@ -163,7 +163,7 @@ export default function Projects() {
                     </p>
                   </div>
 
-                  {/* View Details */}
+                  {/* View Details */}   
                   <motion.a
                     href="#"
                     className="text-blue-600 text-sm font-medium mt-4 inline-flex items-center"

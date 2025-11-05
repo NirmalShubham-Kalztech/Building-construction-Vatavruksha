@@ -9,13 +9,11 @@ import img3 from "../assets/img/image3.png";
 import img4 from "../assets/img/image4.png";
 import img5 from "../assets/img/image5.png";
 
-// --- Background image array ---
 const images = [img1, img2, img3, img4, img5];
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // 🔁 Background image auto-change every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -27,8 +25,6 @@ const Home = () => {
     <>
       {/* 🌇 Hero Section */}
       <div className="relative min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center sm:justify-start overflow-hidden">
-
-        {/* --- Animated Background Image --- */}
         <motion.div
           key={currentImage}
           className="absolute inset-0 bg-cover bg-center transition-all duration-[2000ms]"
@@ -38,11 +34,8 @@ const Home = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         />
-
-        {/* --- Dark Overlay --- */}
         <div className="absolute inset-0 bg-black/60"></div>
 
-        {/* --- Text Section --- */}
         <div className="relative z-10 max-w-5xl px-4 sm:px-8 md:px-16 py-20 text-center sm:text-left">
           <motion.h1
             className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 sm:mb-8"
@@ -59,7 +52,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Vatavruksha Infra Project - With over 15 years of expertise in construction and trimix flooring, we deliver exceptional infrastructure solutions that stand the test of time.
+            Vatavruksha Infra Project - With over 15 years of expertise in
+            construction and trimix flooring, we deliver exceptional
+            infrastructure solutions that stand the test of time.
           </motion.p>
 
           <motion.div
@@ -92,10 +87,14 @@ const Home = () => {
               Vatavruksha Infra Project - Building Excellence<br className="hidden sm:block" /> Since 2009
             </h5>
             <p className="text-sm sm:text-base md:text-lg text-[#22313f] mb-4">
-              Vatavruksha Infra Project is a leading construction company specializing in high-quality concrete works, trimix flooring, and comprehensive infrastructure solutions.
+              Vatavruksha Infra Project is a leading construction company
+              specializing in high-quality concrete works, trimix flooring, and
+              comprehensive infrastructure solutions.
             </p>
             <p className="text-sm sm:text-base md:text-lg text-[#22313f] mb-8">
-              With a team of experienced engineers and skilled craftsmen, we have successfully completed over 200 projects across various sectors.
+              With a team of experienced engineers and skilled craftsmen, we
+              have successfully completed over 200 projects across various
+              sectors.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-20">
               {[
@@ -104,8 +103,12 @@ const Home = () => {
                 { value: "50+", label: "Expert Team" },
               ].map((stat) => (
                 <div key={stat.value} className="text-center">
-                  <div className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-1">{stat.value}</div>
-                  <div className="text-sm md:text-base text-[#22313f]">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-extrabold text-blue-600 mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm md:text-base text-[#22313f]">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -144,7 +147,6 @@ const Home = () => {
       {/* 🔨 Project Details Section */}
       <div className="w-full bg-[#f0f7ff] py-12 sm:py-16 px-4 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-          
           {/* Left Text Section */}
           <motion.div
             className="space-y-4 text-center md:text-left"
@@ -152,42 +154,24 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <motion.span
-              className="inline-block bg-blue-100 text-blue-700 font-semibold px-4 py-1 rounded-full text-sm uppercase tracking-wide"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
+            <motion.span className="inline-block bg-blue-100 text-blue-700 font-semibold px-4 py-1 rounded-full text-sm uppercase tracking-wide">
               Under Construction
             </motion.span>
-
-            <motion.h2
-              className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#02080e]"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
+            <motion.h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#02080e]">
               Metro Industrial Complex
             </motion.h2>
-
-            <motion.p
-              className="text-sm sm:text-base md:text-lg text-[#22313f]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-            >
-              A state-of-the-art 50,000 sq ft industrial facility featuring advanced trimix flooring technology and sustainable design.
+            <motion.p className="text-sm sm:text-base md:text-lg text-[#22313f]">
+              A state-of-the-art 50,000 sq ft industrial facility featuring
+              advanced trimix flooring technology and sustainable design.
             </motion.p>
-
             <ul className="space-y-2 pt-2 text-left">
               <li>✔️ Foundation Work: Completed</li>
               <li>✔️ Structural Framework: 80% Complete</li>
               <li>⏳ Trimix Flooring: In Progress</li>
             </ul>
-
             <div className="pt-4">
               <a
-                href="#"
+                href="/projects"
                 className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition-transform duration-300"
               >
                 View All Projects
@@ -228,6 +212,76 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* 🧱 Services Section */}
+      <div className="bg-white py-16 px-6 md:px-16">
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-[#02080e] mb-12">
+          Our Core Services
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          {[
+            {
+              title: "Trimix Flooring",
+              desc: "High-quality flooring for industrial and commercial projects with smooth, durable finishes.",
+            },
+            {
+              title: "Building Construction",
+              desc: "Complete civil construction services from design to handover ensuring top-notch quality.",
+            },
+            {
+              title: "Road & RCC Work",
+              desc: "Strong and long-lasting roads with advanced RCC technology for durability.",
+            },
+            {
+              title: "Industrial Sheds",
+              desc: "Fabrication and construction of high-strength industrial sheds and warehouses.",
+            },
+            {
+              title: "Structural Design",
+              desc: "Efficient and modern structural designs tailored to client needs.",
+            },
+            {
+              title: "Maintenance & Repair",
+              desc: "Periodic maintenance and repair solutions for sustained performance.",
+            },
+          ].map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#f7f9fc] rounded-xl p-6 shadow-md hover:shadow-xl hover:scale-105 transition duration-300"
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-xl font-bold text-blue-700 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-[#22313f] text-sm md:text-base">
+                {service.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* 🖼️ Gallery Section */}
+      {/* <div className="bg-[#f9fafb] py-16 px-6 md:px-16">
+        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-[#02080e] mb-12">
+          Project Gallery
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {[img1, img2, img3, img4, img5].map((img, index) => (
+            <motion.div
+              key={index}
+              className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src={img}
+                alt={`Gallery ${index + 1}`}
+                className="w-full h-48 object-cover hover:scale-110 transition duration-500 ease-in-out"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div> */}
     </>
   );
 };

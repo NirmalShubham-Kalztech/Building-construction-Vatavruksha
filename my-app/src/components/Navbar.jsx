@@ -63,7 +63,6 @@ const Navbar = () => {
           ["Services", "/services"],
           ["Projects", "/projects"],
           ["Blog", "/blog"],
-          ["Clients", "/clients"],
           ["Career", "/career"],
         ].map(([name, path], index) => (
           <motion.div
